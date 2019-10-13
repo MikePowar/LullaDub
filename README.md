@@ -149,13 +149,17 @@ The front-end is served on http://localhost:3000/ and the back-end on http://loc
 .
 ├── audio-classification/ - Express server that provides API routes and serves front-end
 │ ├── clean/ - Handles all interactions with the cosmos database
-│ ├── wavfiles/ - Handles API calls for routes
+│ ├── models/
 │ ├── oggfiles/ - Adds middleware to the express server
-│ ├── 
-│ ├── 
-│ ├── sampleData.js - Contains all sample text data for generate pages
-│ ├── constants.js - Defines the constants for the endpoints and port
-│ └── 
+│ ├── pickles/
+│ ├── wavfiles/ - Handles API calls for routes
+│ ├── cries.csv - input file for training
+│ ├── demo.csv - input file for demo
+│ ├── prediction.csv - results of prediction.py
+│ ├── cfg.py - configuration options for the program
+│ ├── model.py - creates a trained ML model to predict sound
+│ ├── prediction.py - classifies sound files using the trained model
+│ └── requirements.txt - modules required for running the program
 ├── server/ - Express server that provides API routes and serves front-end
 │ ├── mongo/ - Handles all interactions with the cosmos database
 │ ├── routes/ - Handles API calls for routes
