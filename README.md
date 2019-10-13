@@ -76,6 +76,11 @@ IOT / Home Device
  
  https://hackmd.io/MPnwtfkkT0aCi30UjaEahQ?view
  
+ # Mockups
+ 
+ https://xd.adobe.com/spec/46ffb114-4701-4e91-40a0-8ea9d9689dda-30ce/
+ 
+ 
  
  
  ## Getting Started
