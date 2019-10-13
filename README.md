@@ -1,4 +1,14 @@
-﻿## Getting Started
+﻿# Website
+ https://lullabyzzz-20191013090820.azurewebsites.net/
+ 
+ 
+ # Documentation
+ 
+ https://hackmd.io/MPnwtfkkT0aCi30UjaEahQ?view
+ 
+ 
+ 
+ ## Getting Started
 
 In the root directory of the project...
 
