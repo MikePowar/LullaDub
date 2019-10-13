@@ -1,4 +1,74 @@
-﻿# Website
+# **Project Lullaby**
+
+## Team: Erik, Matt, Joey, Mike
+
+-------
+
+We wanted to design an application that helped babies and parents get better sleep and provide them with data they could use to optimize their sleep strategies.
+
+Inspired by Google's human voice libary https://developers.google.com/assistant/tools/sound-library/human-voices and their voice API 
+
+
+## Primary clients:
+* Parents/caregivers
+* Babies - newborn & infants
+
+## Main Tasks:
+
+1. Detect Cries
+    1. Capture audio
+    2. Process captured audio
+    3. Notify guardian
+2. Handle Responses
+    1. Determine gaurdian for response
+    2. Resolve
+
+## **How it Works:**
+
+### **Devices:**
+* 1.A: An IoT or Home Device for baby's room
+* 1.B: Caregiver's IoT / Home device / mobile
+* Cloud
+
+### **Implementation details**
+
+IOT / Home Device
+
+* Train on ML to recognize / distinguish infant crying sounds using Keras and Tensorflow
+    * Record & track sounds coming from baby's room
+    * Process audio
+    * Generate label (string ? with label identifying sound)
+    * Send label to appropriate devices
+        * Back to device in baby room
+            * change white noise (frequency / volume)
+        * Alert to caregiver(s)
+        * Record event in database with details ()
+            * DETAILS: 
+                * length of cry
+                * type of sound (other baby generated sounds / movement learnable)
+                * which caregiver alerted
+
+* Caregiver device:
+    * Alert - baby is crying
+    * Trigger recording
+        * length of time before they wake to respond
+        * Time of wake
+        * time to sooth baby / get back to sleep
+        * number of times woken up 
+            * that evening
+            * aggregatable
+    * NOTE: could be audio and video
+
+
+## TODO
+- [ ] device use cycle(s) - arrows that show pathway of "objects" & "actions"
+- [ ] Notes / quotes on research / importance of sleep
+- [ ] DataViz for Dashboard
+
+
+
+
+ # Website
  https://lullabyzzz-20191013090820.azurewebsites.net/
  
  
@@ -77,6 +147,15 @@ The front-end is served on http://localhost:3000/ and the back-end on http://loc
 
 ```
 .
+├── audio-classification/ - Express server that provides API routes and serves front-end
+│ ├── clean/ - Handles all interactions with the cosmos database
+│ ├── wavfiles/ - Handles API calls for routes
+│ ├── oggfiles/ - Adds middleware to the express server
+│ ├── 
+│ ├── 
+│ ├── sampleData.js - Contains all sample text data for generate pages
+│ ├── constants.js - Defines the constants for the endpoints and port
+│ └── 
 ├── server/ - Express server that provides API routes and serves front-end
 │ ├── mongo/ - Handles all interactions with the cosmos database
 │ ├── routes/ - Handles API calls for routes
