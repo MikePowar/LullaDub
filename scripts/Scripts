@@ -1,0 +1,25 @@
+from __future__ import unicode_literals
+from subprocess import call
+import csv
+import os
+
+
+path = 'C:\\Users\\Josep\\Documents\\Excel\\Dubhacks.csv'
+
+f = open(path)
+csv_f = csv.reader(f)
+
+count = 0
+
+a = [0] * 27
+
+for i in csv_f:
+    if(count > 2):
+        a[count-3] = i
+    count = count + 1
+
+
+for i in range(27):
+    command = 'youtube-dl --extract-audio --audio-format m4a -o \"C:\\Users\\Josep\\Desktop\\CryingBabies\\' + str(i) + '\".%(ext)s ' + a[i][0]
+    call(command.split(), shell=False)
+

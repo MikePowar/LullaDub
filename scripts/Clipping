@@ -1,0 +1,64 @@
+from __future__ import unicode_literals
+from subprocess import call
+import csv
+import io
+import os
+
+path = 'C:\\Users\\Josep\\Documents\\Excel\\Dubhacks.csv'
+
+f = open(path)
+csv_f = csv.reader(f)
+
+count = 0
+
+b = [0] * 27
+
+for i in csv_f:
+    if(count > 2):
+        b[count-3] = i
+    count = count + 1
+
+Directory = 'C:\\Users\\Josep\\Desktop\\CryingBabies\\'
+Directory1 = 'C:\\Users\\Josep\\Desktop\\CryMP3\\'
+
+tempDirect = 'C:\\Users\\Josep\\Desktop\\ClipCryM3\\'
+finalDirect = 'C:\\Users\\Josep\\Desktop\\EatShit\\'
+
+for i in range(26):
+    # call('ffmpeg -i ' + Directory + str(i) + '#.m4a -acodec libmp3lame -ab 256k '+ Directory1 + str(i) + '.mp3', shell=True)
+    call('ffmpeg -i ' + tempDirect + str(i + 1) + '.mp3 -acodec pcm_u8 -ar 22050 ' + finalDirect + str(i + 1) + '.wav', shell=True)
+
+# Directory2 = 'C:\\Users\\Josep\\Desktop\\ClipCryM3\\'
+# a = 0
+# for i in range(27):
+#     Startminute = int(int(float(b[i][1])) / 60)
+#     Startsecond = int(float(b[i][1]) - (Startminute * 60))
+
+#     if(Startminute < 9):
+#         if(Startsecond < 9):
+#             StartString = '00:0' + str(Startminute) + ':0' + str(Startsecond)
+#         else:
+#             StartString = '00:0' + str(Startminute) + ':' + str(Startsecond)
+#     else:
+#         if(Startsecond < 9):
+#             StartString = '00:' + str(Startminute) + ':0' + str(Startsecond)
+#         else:
+#             StartString = '00:' + str(Startminute) + ':' + str(Startsecond)
+
+#     Endminute = int(int(float(b[i][1])) / 60)
+#     Endsecond = int(float(b[i][2]) - (Endminute * 60))
+
+#     if(Endminute < 9):
+#         if(Endsecond < 9):
+#             EndString = '00:0' + str(Endminute) + ':0' + str(Endsecond)
+#         else:
+#             EndString = '00:0' + str(Endminute) + ':' + str(Endsecond)
+#     else:
+#         if(Endsecond < 9):
+#             EndString = '00:' + str(Endminute) + ':0' + str(Endsecond)
+#         else:
+#             EndString = '00:' + str(Endminute) + ':' + str(Endsecond)
+
+#     call('ffmpeg -i ' + Directory1 + str(i) + '.mp3 -ss ' + StartString + ' -t ' + EndString + ' -acodec copy ' + Directory2 + str(i) + '.mp3', shell=True)
+
+#     a = a + 1
