@@ -20,6 +20,50 @@ for i in csv_f:
 
 
 for i in range(27):
-    command = 'youtube-dl --extract-audio --audio-format m4a -o \"C:\\Users\\Josep\\Desktop\\CryingBabies\\' + str(i) + '\".%(ext)s ' + a[i][0]
+    command = 'youtube-dl --extract-audio --audio-format m4a -o \"Create\\your\\directories\\' + str(i) + '\".%(ext)s ' + a[i][0]
     call(command.split(), shell=False)
 
+Directory = 'Create\\directory\\'
+Directory1 = 'Create\\directory\\'
+
+tempDirect = 'Create\\directory\\'
+finalDirect = 'Create\\directory\\'
+
+for i in range(26):
+    call('ffmpeg -i ' + Directory + str(i) + '#.m4a -acodec libmp3lame -ab 256k '+ Directory1 + str(i) + '.mp3', shell=True)
+
+Directory2 = 'Create\\directory\\'
+
+for i in range(27):
+    Startminute = int(int(float(b[i][1])) / 60)
+    Startsecond = int(float(b[i][1]) - (Startminute * 60))
+
+    if(Startminute < 9):
+        if(Startsecond < 9):
+            StartString = '00:0' + str(Startminute) + ':0' + str(Startsecond)
+        else:
+            StartString = '00:0' + str(Startminute) + ':' + str(Startsecond)
+    else:
+        if(Startsecond < 9):
+            StartString = '00:' + str(Startminute) + ':0' + str(Startsecond)
+        else:
+            StartString = '00:' + str(Startminute) + ':' + str(Startsecond)
+
+    Endminute = int(int(float(b[i][1])) / 60)
+    Endsecond = int(float(b[i][2]) - (Endminute * 60))
+
+    if(Endminute < 9):
+        if(Endsecond < 9):
+            EndString = '00:0' + str(Endminute) + ':0' + str(Endsecond)
+        else:
+            EndString = '00:0' + str(Endminute) + ':' + str(Endsecond)
+    else:
+        if(Endsecond < 9):
+            EndString = '00:' + str(Endminute) + ':0' + str(Endsecond)
+        else:
+            EndString = '00:' + str(Endminute) + ':' + str(Endsecond)
+
+    call('ffmpeg -i ' + Directory1 + str(i) + '.mp3 -ss ' + StartString + ' -t ' + EndString + ' -acodec copy ' + Directory2 + str(i) + '.mp3', shell=True)
+
+for i in range(26):
+    call('ffmpeg -i ' + tempDirect + str(i + 1) + '.mp3 -acodec pcm_u8 -ar 22050 ' + finalDirect + str(i + 1) + '.wav', shell=True)
