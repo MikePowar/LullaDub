@@ -1,0 +1,24 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "name": {
+      "value": "LullabyZzz-20191013090820"
+    },
+    "appServicePlanName": {
+      "value": "LullabyZzz-20191013090848"
+    },
+    "sku": {
+      "value": "B1"
+    },
+    "linuxFxVersion": {
+      "value": "node|10.14"
+    },
+    "subscriptionId": {
+      "value": "b4c263e0-a4b2-4b59-8eb0-14876a251ba6"
+    },
+    "location": {
+      "value": "Central US"
+    }
+  }
+}
