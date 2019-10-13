@@ -76,11 +76,6 @@ IOT / Home Device
  
  https://hackmd.io/MPnwtfkkT0aCi30UjaEahQ?view
  
- # Mockups
- 
- https://xd.adobe.com/spec/46ffb114-4701-4e91-40a0-8ea9d9689dda-30ce/
- 
- 
  
  
  ## Getting Started
@@ -89,6 +84,12 @@ In the root directory of the project...
 
 1. Install node modules `yarn install` or `npm install`.
 2. Start development server `yarn start` or `npm start`.
+
+
+In Windows:
+
+1. Install ffmpeg at 'https://www.ffmpeg.org/'
+2. Change Path to C:/file/location/bin/ffmpeg.exe
 
 ## Next Steps
 
