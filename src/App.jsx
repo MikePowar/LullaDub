@@ -17,7 +17,7 @@ class App extends Component {
           <Redirect exact path = "/" to = "/Blank" />
           <Route path = "/Blank" component = { Blank } />
           <Route path = "/Grid" component = { Grid } />
-          <Route path = "/Master_Detail2" component = { Master_Detail2 } />
+          <Route path = "/Master" component = { Master_Detail2 } />
         </Switch>
         <Footer />
       </React.Fragment>
