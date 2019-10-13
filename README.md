@@ -4,9 +4,9 @@
 
 -------
 
-We wanted to design an application that helped babies and parents get better sleep and provide them with data they could use to optimize their sleep strategies.
+What if parents and babies could get a better night's sleep? With Lullaby, we designed a web application that helps babies and parents get a better night's sleep by notifying them when their baby is crying and providing them with data to optimize their sleep strategies.
 
-Inspired by Google's human voice libary https://developers.google.com/assistant/tools/sound-library/human-voices and their voice API 
+Inspired by Google's human voice libary https://developers.google.com/assistant/tools/sound-library/human-voices and their voice API.
 
 
 ## Primary clients:
@@ -21,7 +21,7 @@ Inspired by Google's human voice libary https://developers.google.com/assistant/
     3. Notify guardian
 2. Handle Responses
     1. Determine gaurdian for response
-    2. Resolve
+    2. Address reasons for wake up
 
 ## **How it Works:**
 
